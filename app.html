@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="aframe.js"></script>
+</head>
+<body>
+<a-scene>
+<!--    Preloading Media -->
+    <a-assets>
+<!--        Preloading Videos-->
+        <video id="hub" autoplay loop="true" src="Media/Lobby.mp4"></video>
+        <video id="student" loop="true" src="Media/StudentHub.MOV"></video>
+        <video id="caf" loop="true" src="Media/Cafeteria.mp4"></video>
+        <video id="nelson" loop="true" src="Media/nelson.MOV"></video>
+        <video id="perry" loop="true" src="Media/perry.MOV"></video>
+        <video id="west" loop="true" src="Media/west.MOV"></video>
+<!--        Preloading Images-->
+        <img id="cafimg" src="Media/CafeteriaLSBU.jpg"/>
+        <img id="lobby" src="Media/lobby.jpg"/>
+        <img id="hubimg" src="Media/LSBU_Hub.jpg"/>
+        <img id="nelsonimg" src="Media/nelson.jpeg"/>
+        <img id="perryimg" src="Media/perry.jpeg"/>
+        <img id="westimg" src="Media/westminster.jpeg"/>
+
+
+    </a-assets>
+    <!--    Location 1 LSBU Lobby-->
+    <a-entity id="loc1" position="0 -1 0" rotation="0 213 0" visible="true">
+        <a-videosphere src="#hub">
+        </a-videosphere>
+
+        <!--   Button to Cafeteria -->
+        <a-image src="#cafimg"
+                 position="5.8 7.9 8" rotation="0 150 -1"
+                 width="6.3" height="3.78"
+                 onclick="showLoc2()"></a-image>
+        <a-text value="Go to Cafeteria"
+                position="5.8 5.6 8" rotation="0 150 -1"
+                align="center" width="7" color="red"></a-text>
+
+        <!--    Button to Student Hub -->
+        <a-image src="#hubimg"
+                 position="0 9 8" rotation="0 150 -1"
+                 width="8.3853" height="5.0312"
+                 onclick="showLoc3()"></a-image>
+        <a-text value="Go to Student Hub"
+                position="0 6 8" rotation="0 150 -1"
+                align="center" width="10" color="red"></a-text>
+
+        <!--    Button to Nelson Theatre-->
+        <a-image src="#nelsonimg"
+                 position="-11.5 11 8" rotation="0 150 -1"
+                 width="12.8641" height="7.7200"
+                 onclick="showLoc4()"></a-image>
+        <a-text value="Go to Nelson Theatre"
+                position="-11.5 6.6 8" rotation="0 150 -1"
+                align="center" width="15" color="red">
+
+        </a-text>
+
+        <!--    Button to Perry Library-->
+        <a-image src="#perryimg"
+                 position="-44 17 8" rotation="0 150 -1"
+                 width="24.1530" height="14.4948"
+                 onclick="showLoc5()"></a-image>
+        <a-text value="Go to Perry Library"
+                position="-44 8.8 8" rotation="0 150 -1"
+                align="center" width="30" color="red">
+        </a-text>
+
+        <!--    Button to Westminster Lecture Hall -->
+        <a-image src="#westimg"
+                 position="-450 90 8" rotation="0 150 -1"
+                 width="166.1295" height="99.6981"
+                 onclick="showLoc6()"></a-image>
+        <a-text value="Go to Westminster Hall"
+                position="-250 21 8" rotation="0 150 -1"
+                align="center" width="60" color="red"
+                scale="2 2 2"></a-text>
+
+
+    </a-entity>
+
+
+    <!--    Location 2 LSBU Cafeteria-->
+    <a-entity id="loc2" position="0 -1 0" rotation="0 138 0" visible="false">
+        <a-videosphere src="#caf"></a-videosphere>
+<!--    Button Back to Lobby-->
+        <a-image src="#lobby"
+                 position="-20 5 -3" rotation="0 75 0"
+                 width="4" height="2.4"
+                 onclick="showLoc1()"></a-image>
+        <a-text value="Go back to lobby"
+                position="-20 3 -3" rotation="0 75 0"
+                align="center" width="20" color="red"></a-text>
+    </a-entity>
+
+    <!--    Location 3 LSBU Student Hub-->
+    <a-entity id="loc3" position="0 -1 0" rotation="0 200 0" visible="false">
+        <a-videosphere src="#student"></a-videosphere>
+
+        <a-image src="#lobby"
+                 position="-20 5 -2" rotation="0 80 0"
+                 width="4" height="2.4"
+                 onclick="showLoc1()"></a-image>
+        <a-text value="Go back to lobby"
+                position="-20 3 -2" rotation="0 80 0"
+                align="center" width="20" color="red"></a-text>
+    </a-entity>
+
+
+    <!--    Location 4 Nelson Haden Theatre LSBU-->
+    <a-entity id="loc4" position="0 -1 0" rotation="0 100 0" visible="false">
+        <a-videosphere src="#nelson"></a-videosphere>
+
+        <a-image src="#lobby"
+                 position="-20 8 -1" rotation="0 90 0"
+                 width="4" height="2.4"
+                 onclick="showLoc1()"></a-image>
+        <a-text value="Go back to lobby"
+                position="-20 6 -1" rotation="0 90 0"
+                align="center" width="15" color="red"></a-text>
+    </a-entity>
+
+
+    <!--    Location 5 Perry Library LSBU-->
+    <a-entity id="loc5" position="0 -1 0" rotation="0 -32 0" visible="false">
+        <a-videosphere src="#perry"></a-videosphere>
+        <a-image src="#lobby"
+                 position="3 5 -12" rotation="0 1 0"
+                 width="4" height="2.4"
+                 onclick="showLoc1()"></a-image>
+        <a-text value="Go back to lobby"
+                position="3 3.5 -12" rotation="0 1 0"
+                align="center" width="15" color="red"></a-text>
+    </a-entity>
+
+
+    <!--    Location 6 Westminster Lecture Hall LSBU-->
+    <a-entity id="loc6" position="0 -1 0" visible="false">
+        <a-videosphere src="#west"></a-videosphere>
+        <a-image src="#lobby"
+                 position="-20 7 3" rotation="0 70 0"
+                 width="4" height="2.4"
+                 onclick="showLoc1()"></a-image>
+        <a-text value="Go back to lobby"
+                position="-20 5 3" rotation="0 70 0"
+                align="center" width="15" color="red"></a-text>
+    </a-entity>
+
+    <!--    Player Camera-->
+    <a-camera id="cam" position="2 3 5">
+        <a-cursor color="red"></a-cursor>
+        <a-entity raycaster="objects: .clickable"></a-entity>
+
+    </a-camera>
+
+
+</a-scene>
+<!--    JavaScript Section-->
+<script type="text/javascript">
+
+    //Location 1 Function
+    function showLoc1() {
+
+    //Turning every location off and turning Loc 1 on
+        document.getElementById('loc1').setAttribute('visible', 'true');
+        document.getElementById('loc2').setAttribute('visible', 'false');
+        document.getElementById('loc3').setAttribute('visible', 'false');
+        document.getElementById('loc4').setAttribute('visible', 'false');
+        document.getElementById('loc5').setAttribute('visible', 'false');
+        document.getElementById('loc6').setAttribute('visible', 'false');
+
+    //Stopping and resetting every video
+        document.querySelector('#hub').pause();
+        document.querySelector('#hub').currentTime = 0;
+        document.querySelector('#caf').pause();
+        document.querySelector('#caf').currentTime = 0;
+        document.querySelector('#student').pause();
+        document.querySelector('#student').currentTime = 0;
+        document.querySelector('#nelson').pause();
+        document.querySelector('#nelson').currentTime = 0;
+        document.querySelector('#perry').pause();
+        document.querySelector('#perry').currentTime = 0;
+        document.querySelector('#west').pause();
+        document.querySelector('#west').currentTime = 0;
+
+    //Setting camera rotation to the default
+        const camera = document.querySelector('#cam');
+        camera.components['look-controls'].pitchObject.rotation.x = 0;
+        camera.components['look-controls'].yawObject.rotation.y = 0;
+
+        document.querySelector('#hub').play();
+    }
+
+    function showLoc2() {
+        document.getElementById('loc1').setAttribute('visible', 'false');
+        document.getElementById('loc2').setAttribute('visible', 'true');
+
+        document.querySelector('#hub').pause();
+        document.querySelector('#hub').currentTime = 0;
+        document.querySelector('#caf').play();
+    }
+
+    function showLoc3() {
+        document.getElementById('loc1').setAttribute('visible', 'false');
+        document.getElementById('loc3').setAttribute('visible', 'true');
+
+        document.querySelector('#hub').pause();
+        document.querySelector('#hub').currentTime = 0;
+        document.querySelector('#student').play();
+    }
+
+    function showLoc4() {
+        document.getElementById('loc1').setAttribute('visible', 'false');
+        document.getElementById('loc4').setAttribute('visible', 'true');
+
+        document.querySelector('#hub').pause();
+        document.querySelector('#hub').currentTime = 0;
+        document.querySelector('#nelson').play();
+    }
+
+    function showLoc5() {
+     document.getElementById('loc1').setAttribute('visible', 'false');
+     document.getElementById('loc5').setAttribute('visible', 'true');
+
+        document.querySelector('#hub').pause();
+        document.querySelector('#hub').currentTime = 0;
+        document.querySelector('#perry').play();
+    }
+
+     function showLoc6() {
+        document.getElementById('loc1').setAttribute('visible', 'false');
+        document.getElementById('loc6').setAttribute('visible', 'true');
+
+        document.querySelector('#hub').pause();
+        document.querySelector('#hub').currentTime = 0;
+        document.querySelector('#west').play();
+    }
+
+
+</script>
+
+</body>
+</html>
